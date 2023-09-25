@@ -44,7 +44,26 @@ while True:
             print("Zadali jste sudé číslo. Zadejte liché číslo.")
     except ValueError:
         print("Neplatný vstup. Zadejte prosím celé liché číslo.")
+#18.9
+cisla = [1, 2, 3, 4, 5]
+soucet = sum(cisla)
+print("Součet všech prvků v seznamu je:", soucet)
 
+cisla = [1, 2, 3, 4, 5]
+nejmensi = min(cisla)
+nejvetsi = max(cisla)
+print("Nejmenší číslo v seznamu je:", nejmensi)
+print("Největší číslo v seznamu je:", nejvetsi)
+
+cisla = [1, 2, 2, 3, 4, 4, 5, 5]
+cisla = list(set(cisla))
+print("Seznam bez duplikátů:", cisla)
+
+cisla = []
+if not cisla:
+    print("Seznam je prázdný.")
+else:
+    print("Seznam není prázdný.")
 
 
 
