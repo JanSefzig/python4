@@ -51,6 +51,27 @@ while True:
 
 
 
+#25.9
+keys = ["John", "Marie", "Alex"]
+values = ["41", "15", "66"]
+
+slovnik = dict(zip(keys, values))
+print(slovnik)
+
+trida = {
+    "student1": {"jmeno": "John", "vek": 18},
+    "student2": {"jmeno": "Marie", "vek": 19},
+    "student3": {"jmeno": "Alex", "vek": 17},
+    "student4": {"jmeno": "Eva", "vek": 20},
+    "student5": {"jmeno": "Daniel", "vek": 18}
+}
+
+
+
+
+
+
+
 
 
 
