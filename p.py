@@ -86,6 +86,39 @@ trida = {
 }
 
 
+#2.10
+zamestnanci = {
+    "zamestnanec1": {"jmeno": "John", "prijmeni": "Doe", "pozice": "Manažer", "email": "john.doe@example.com", "kancelar": "A101"},
+    "zamestnanec2": {"jmeno": "Jane", "prijmeni": "Smith", "pozice": "Vývojář", "email": "jane.smith@example.com", "kancelar": "B203"},
+    "zamestnanec3": {"jmeno": "Alice", "prijmeni": "Johnson", "pozice": "Asistentka", "email": "alice.johnson@example.com", "kancelar": "A101"},
+    "zamestnanec4": {"jmeno": "Bob", "prijmeni": "Brown", "pozice": "Vývojář", "email": "bob.brown@example.com", "kancelar": "C305"},
+    "zamestnanec5": {"jmeno": "Eva", "prijmeni": "Williams", "pozice": "Vedoucí projektu", "email": "eva.williams@example.com", "kancelar": "B203"}
+}
+
+for zamestnanec, informace in zamestnanci.items():
+    print(f"Zaměstnanec: {zamestnanec}")
+    print(f"Jméno: {informace['jmeno']} {informace['prijmeni']}")
+    print(f"Pozice: {informace['pozice']}")
+    print(f"Email: {informace['email']}")
+    print(f"Kancelář: {informace['kancelar']}")
+    print()
+
+for zamestnanec, informace in zamestnanci.items():
+    print(f"{informace['jmeno']} {informace['prijmeni']}, Email: {informace['email']}")
+
+zamestnanec = "zamestnanec3"  # Zde zvolte konkrétního zaměstnance
+informace = zamestnanci.get(zamestnanec)
+
+if informace:
+    print(f"Jméno: {informace['jmeno']} {informace['prijmeni']}")
+    print(f"Pozice: {informace['pozice']}")
+else:
+    print("Zaměstnanec nebyl nalezen.")
+
+kancelar = "A101"  # Zde zvolte konkrétní kancelář
+for zamestnanec, informace in zamestnanci.items():
+    if informace['kancelar'] == kancelar:
+        print(f"{informace['jmeno']} {informace['prijmeni']}, Pozice: {informace['pozice']}")
 
 
 
