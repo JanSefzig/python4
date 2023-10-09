@@ -168,3 +168,41 @@ while True:
     except ValueError:
         print("Neplatný vstup. Zadejte prosím celé liché číslo.")
 
+#9.10
+def vypis_jmena():
+    with open('names.txt', 'r') as file:
+        for line in file:
+            print(line.strip())
+
+def pridat_jmena(jmena):
+    with open('names.txt', 'a') as file:
+        for jmeno in jmena:
+            file.write(jmeno + '\n')
+
+# Zavolání funkcí:
+vypis_jmena()
+nova_jmena = ['Marta', 'Petr', 'Eva']
+pridat_jmena(nova_jmena)
+
+def pocet_slov_v_souboru(nazev_souboru):
+    with open(nazev_souboru, 'r') as file:
+        text = file.read()
+        slova = text.split()
+        return len(slova)
+
+# Zavolání funkce a vypsání počtu slov
+pocet = pocet_slov_v_souboru('names.txt')
+print(f'Počet slov v souboru: {pocet}')
+
+import json
+
+# Vytvoření slovníku z obrazku (nahraďte obsahem obrazku)
+obrazek_slovniku = {
+    "klic1": "hodnota1",
+    "klic2": "hodnota2",
+    "klic3": "hodnota3"
+}
+
+# Zápis slovníku do souboru v JSON formátu
+with open('slovnik.txt', 'w') as file:
+    json.dump(obrazek_slovniku, file)
