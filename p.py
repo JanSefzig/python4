@@ -206,3 +206,33 @@ obrazek_slovniku = {
 # Zápis slovníku do souboru v JSON formátu
 with open('slovnik.txt', 'w') as file:
     json.dump(obrazek_slovniku, file)
+#16.10
+def vytvor_soubor_slovnikem(slovnik, nazev_souboru):
+    try:
+        with open(nazev_souboru, 'w') as soubor:
+            for klic, hodnoty in slovnik.items():
+                soubor.write(f'{klic}:\n')
+                for klic2, hodnota in hodnoty.items():
+                    soubor.write(f'  {klic2}: {hodnota}\n')
+                soubor.write('\n')
+        print(f'Soubor {nazev_souboru} byl vytvořen a obsah slovníku byl zapsán.')
+    except Exception as e:
+        print(f'Nastala chyba: {str(e)}')
+
+# Příklad použití
+zamestnanci = {
+    1: {
+        'jmeno': 'Jan Novák',
+        'pozice': 'Manažer',
+        'email': 'jan.novak@firma.cz',
+        'kancelar': 'A101'
+    },
+    2: {
+        'jmeno': 'Eva Kovářová',
+        'pozice': 'Asistentka',
+        'email': 'eva.kovarova@firma.cz',
+        'kancelar': 'B202'
+    }
+}
+
+vytvor_soubor_slovnikem(zamestnanci, 'zamestnanci.txt')
